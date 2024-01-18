@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+struct Date
+ {
+    int day;
+    int month;
+    int year;
+};
+
+int calculateDifference(struct Date dt1, struct Date dt2)
+ {
+    int diff;
+    diff = ((dt2.year - dt1.year) * 365) + ((dt2.month - dt1.month) * 30) + (dt2.day - dt1.day);
+    return diff;
+}
+
+void main()
+ {
+    struct Date dt1, dt2;
+    printf("Enter first date (day month year): ");
+    scanf("%d %d %d", &dt1.day, &dt1.month, &dt1.year);
+    printf("Enter second date (day month year): ");
+    scanf("%d %d %d", &dt2.day, &dt2.month, &dt2.year);
+    printf("Difference between the two dates is: %d days\n", calculateDifference(dt1, dt2));
+}
