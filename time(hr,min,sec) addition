@@ -1,0 +1,29 @@
+#include <stdio.h>
+struct time
+{
+    int hr,min,sec;
+};
+int main()
+{
+    struct time time1,time2,time3;
+    printf("enter the hr,min,sec of 1st time:");
+    scanf("%d%d%d",&time1.hr,&time1.min,&time1.sec);
+    printf("enter the hr,min,sec of 2st time:");
+    scanf("%d%d%d",&time2.hr,&time2.min,&time2.sec);
+    time3.sec=time1.sec+time2.sec;
+    if(time3.sec>=60)
+    {
+        time3.sec=time3.sec-60;
+        time3.min=time1.min+time2.min+1;
+    }
+    else
+        time3.min=time1.min+time2.min;
+    if(time3.min>=60)
+    {
+        time3.min=time3.min-60;
+        time3.hr=time1.hr+time2.hr+1;
+    }
+    else
+        time3.hr=time1.hr+time2.hr;
+    printf("TIME - %d:%d:%d",time3.hr,time3.min,time3.sec);
+}
